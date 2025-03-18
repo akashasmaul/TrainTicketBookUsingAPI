@@ -1,0 +1,217 @@
+Given I authenticate with the API
+Authentication successful. Token received.
+-> done: TrainTicketBookingViaAPIStepDefinitions.GivenIAuthenticateWithTheAPI() (0.9s)
+When I search for trips from 'Dhaka' to 'Kishorganj' on '28-Dec-2024' with seat class 'S_CHAIR' and trip number 'KISHORGANJ EXPRESS (781)'
+Response Status Code: OK
+Selected trip: KISHORGANJ EXPRESS (781)
+Route ID: 22713, Trip ID: 8379249
+-> done: TrainTicketBookingViaAPIStepDefinitions.WhenISearchForTripsFromToOnWithSeatClassAndTripNumber("Dhaka", "Kishorganj", "28-Dec-2024", "S_CHAIR", "KISHORGANJ EXPRES...") (0.4s)
+And I get available seats for the trip
+Selected TripId: 8379201
+Selected TripRouteId: 51573751
+Response Status Code: OK
+Seat GHA-1 is not available.
+Seat  is not available.
+Seat  is not available.
+Seat  is not available.
+Seat  is not available.
+Seat GHA-2 is not available.
+Seat  is not available.
+Seat  is not available.
+Seat GHA-3 is not available.
+Seat GHA-4 is not available.
+Seat GHA-5 is not available.
+Seat GHA-6 is not available.
+Seat  is not available.
+Seat GHA-7 is not available.
+Seat GHA-8 is not available.
+Seat GHA-9 is not available.
+Seat GHA-10 is not available.
+Seat  is not available.
+Seat GHA-11 is not available.
+Seat GHA-12 is not available.
+Seat GHA-13 is not available.
+Seat GHA-14 is not available.
+Seat  is not available.
+Seat GHA-15 is not available.
+Seat GHA-16 is not available.
+Seat GHA-17 is not available.
+Seat GHA-18 is not available.
+Seat  is not available.
+Seat GHA-19 is not available.
+Seat GHA-20 is not available.
+Seat GHA-21 is not available.
+Seat GHA-22 is not available.
+Seat  is not available.
+Seat GHA-23 is not available.
+Seat GHA-24 is not available.
+Seat GHA-25 is not available.
+Seat GHA-26 is not available.
+Seat  is not available.
+Seat GHA-27 is not available.
+Seat GHA-28 is not available.
+Seat GHA-29 is not available.
+Seat GHA-30 is not available.
+Seat  is not available.
+Seat GHA-31 is not available.
+Seat GHA-32 is not available.
+Seat  is not available.
+Seat  is not available.
+Seat  is not available.
+Seat  is not available.
+Seat  is not available.
+Seat GHA-33 is not available.
+Seat GHA-34 is not available.
+Seat  is not available.
+Seat GHA-35 is not available.
+Seat GHA-36 is not available.
+Seat GHA-37 is not available.
+Seat GHA-38 is not available.
+Seat  is not available.
+Seat GHA-39 is not available.
+Seat GHA-40 is not available.
+Seat GHA-41 is not available.
+Seat GHA-42 is not available.
+Seat  is not available.
+Seat GHA-43 is not available.
+Seat GHA-44 is not available.
+Seat GHA-45 is not available.
+Seat GHA-46 is not available.
+Seat  is not available.
+Seat GHA-47 is not available.
+Seat GHA-48 is not available.
+Seat GHA-49 is not available.
+Seat GHA-50 is not available.
+Seat  is not available.
+Seat GHA-51 is not available.
+Seat GHA-52 is not available.
+Seat GHA-53 is not available.
+Seat GHA-54 is not available.
+Seat  is not available.
+Seat GHA-55 is available and added.
+Seat GHA-56 is not available.
+Seat GHA-57 is not available.
+Seat GHA-58 is not available.
+Seat  is not available.
+Seat  is not available.
+Seat GHA-59 is not available.
+Seat  is not available.
+Seat  is not available.
+Seat  is not available.
+Seat  is not available.
+Seat GHA-60 is not available.
+Seat UMA-1 is available and added.
+Seat  is not available.
+Seat  is not available.
+Seat  is not available.
+Seat  is not available.
+Seat UMA-2 is not available.
+Seat  is not available.
+Seat  is not available.
+Seat UMA-3 is not available.
+Seat UMA-4 is not available.
+Seat UMA-5 is not available.
+Seat UMA-6 is not available.
+Seat  is not available.
+Seat UMA-7 is available and added.
+Seat UMA-8 is not available.
+Seat UMA-9 is not available.
+Seat UMA-10 is not available.
+Seat  is not available.
+Seat UMA-11 is not available.
+Seat UMA-12 is not available.
+Seat UMA-13 is not available.
+Seat UMA-14 is not available.
+Seat  is not available.
+Seat UMA-15 is not available.
+Seat UMA-16 is not available.
+Seat UMA-17 is not available.
+Seat UMA-18 is not available.
+Seat  is not available.
+Seat UMA-19 is not available.
+Seat UMA-20 is not available.
+Seat UMA-21 is not available.
+Seat UMA-22 is not available.
+Seat  is not available.
+Seat UMA-23 is not available.
+Seat UMA-24 is not available.
+Seat UMA-25 is not available.
+Seat UMA-26 is not available.
+Seat  is not available.
+Seat UMA-27 is not available.
+Seat UMA-28 is not available.
+Seat UMA-29 is available and added.
+Seat UMA-30 is not available.
+Seat  is not available.
+Seat UMA-31 is not available.
+Seat UMA-32 is not available.
+Seat  is not available.
+Seat  is not available.
+Seat  is not available.
+Seat  is not available.
+Seat  is not available.
+Seat UMA-33 is not available.
+Seat UMA-34 is not available.
+Seat  is not available.
+Seat UMA-35 is not available.
+Seat UMA-36 is not available.
+Seat UMA-37 is not available.
+Seat UMA-38 is not available.
+Seat  is not available.
+Seat UMA-39 is not available.
+Seat UMA-40 is not available.
+Seat UMA-41 is not available.
+Seat UMA-42 is not available.
+Seat  is not available.
+Seat UMA-43 is not available.
+Seat UMA-44 is not available.
+Seat UMA-45 is not available.
+Seat UMA-46 is not available.
+Seat  is not available.
+Seat UMA-47 is not available.
+Seat UMA-48 is not available.
+Seat UMA-49 is not available.
+Seat UMA-50 is not available.
+Seat  is not available.
+Seat UMA-51 is not available.
+Seat UMA-52 is not available.
+Seat UMA-53 is not available.
+Seat UMA-54 is not available.
+Seat  is not available.
+Seat UMA-55 is not available.
+Seat UMA-56 is not available.
+Seat UMA-57 is available and added.
+Seat UMA-58 is available and added.
+Seat  is not available.
+Seat  is not available.
+Seat UMA-59 is not available.
+Seat  is not available.
+Seat  is not available.
+Seat  is not available.
+Seat  is not available.
+Seat UMA-60 is available and added.
+Available seats: GHA-55, UMA-1, UMA-7, UMA-29
+-> done: TrainTicketBookingViaAPIStepDefinitions.WhenIGetAvailableSeatsForTheTrip() (0.2s)
+And I book the selected seats
+Seat Number: GHA-55 is not available for booking.
+Seat Number: UMA-1 is not available for booking.
+Seat Number: UMA-7 is not available for booking.
+Seat Number: UMA-29 is not available for booking.
+-> done: TrainTicketBookingViaAPIStepDefinitions.WhenIBookTheSelectedSeats() (0.0s)
+And I continue to purchase for verification
+Failed to retrieve a valid trip ID, trip route ID, or ticket IDs for verification.
+Error verifying booking: Failed to retrieve a valid trip ID, trip route ID, or ticket IDs for verification.
+-> error: Multiple failures or warnings in test:
+  1) Failed to retrieve a valid trip ID, trip route ID, or ticket IDs for verification.
+  2) Error during continue purchase verification: Failed to retrieve a valid trip ID, trip route ID, or ticket IDs for verification.
+ (0.0s)
+And I take input from localhost
+-> skipped because of previous errors
+And I Verify Collected API and Submit
+-> skipped because of previous errors
+And I confirm Booking
+-> skipped because of previous errors
+And I should be redirected to the payment page
+-> skipped because of previous errors
+Then the booking should be successful
+-> skipped because of previous errors
