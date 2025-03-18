@@ -1,0 +1,351 @@
+Given I authenticate with the API
+Authentication successful. Token received.
+-> done: TrainTicketBookingViaAPIStepDefinitions.GivenIAuthenticateWithTheAPI() (0.8s)
+When I search for trips from 'From' to 'To' on 'Date' with seat class 'SNIGDHA' and trip number 'TrainNumber'
+Response Status Code: OK
+Selected trip: PANCHAGARH EXPRESS (794)
+TripRouteId: 52633545, TripId: 8410847, TripPointId: 107778965
+-> done: TrainTicketBookingViaAPIStepDefinitions.WhenISearchForTripsFromToOnWithSeatClassAndTripNumber("From", "To", "Date", "SNIGDHA", "TrainNumber") (1.1s)
+And I get available seats for the trip
+Selected TripId: 8410847, Selected TripRouteId: 52633545, Selected BoardingPointId: 107778965
+Response Status Code: OK
+Seat GA-1 is not available.
+Seat GA-2 is not available.
+Seat  is not available.
+Seat  is not available.
+Seat GA-3 is not available.
+Seat GA-4 is not available.
+Seat GA-5 is not available.
+Seat GA-6 is not available.
+Seat GA-7 is not available.
+Seat  is not available.
+Seat GA-8 is not available.
+Seat GA-9 is not available.
+Seat GA-10 is not available.
+Seat GA-11 is not available.
+Seat GA-12 is not available.
+Seat  is not available.
+Seat GA-13 is not available.
+Seat GA-14 is available and added.
+Seat GA-15 is available and added.
+Seat GA-16 is not available.
+Seat GA-17 is not available.
+Seat  is not available.
+Seat GA-18 is not available.
+Seat GA-19 is not available.
+Seat GA-20 is not available.
+Seat GA-21 is not available.
+Seat GA-22 is not available.
+Seat  is not available.
+Seat GA-23 is not available.
+Seat GA-24 is not available.
+Seat GA-25 is not available.
+Seat GA-26 is not available.
+Seat GA-27 is not available.
+Seat  is not available.
+Seat GA-28 is not available.
+Seat GA-29 is not available.
+Seat GA-30 is not available.
+Seat GA-31 is not available.
+Seat GA-32 is not available.
+Seat  is not available.
+Seat GA-33 is not available.
+Seat GA-34 is not available.
+Seat GA-35 is not available.
+Seat GA-36 is not available.
+Seat GA-37 is not available.
+Seat  is not available.
+Seat GA-38 is not available.
+Seat GA-39 is not available.
+Seat  is not available.
+Seat  is not available.
+Seat  is not available.
+Seat  is not available.
+Seat  is not available.
+Seat  is not available.
+Seat GA-40 is not available.
+Seat GA-41 is not available.
+Seat GA-42 is not available.
+Seat  is not available.
+Seat GA-43 is not available.
+Seat GA-44 is not available.
+Seat GA-45 is not available.
+Seat GA-46 is not available.
+Seat GA-47 is not available.
+Seat  is not available.
+Seat GA-48 is not available.
+Seat GA-49 is not available.
+Seat GA-50 is not available.
+Seat GA-51 is not available.
+Seat GA-52 is not available.
+Seat  is not available.
+Seat GA-53 is not available.
+Seat GA-54 is not available.
+Seat GA-55 is not available.
+Seat GA-56 is not available.
+Seat GA-57 is not available.
+Seat  is not available.
+Seat GA-58 is not available.
+Seat GA-59 is not available.
+Seat GA-60 is not available.
+Seat GA-61 is not available.
+Seat GA-62 is not available.
+Seat  is not available.
+Seat GA-63 is not available.
+Seat GA-64 is not available.
+Seat GA-65 is not available.
+Seat GA-66 is not available.
+Seat GA-67 is not available.
+Seat  is not available.
+Seat GA-68 is not available.
+Seat GA-69 is not available.
+Seat GA-70 is not available.
+Seat GA-71 is not available.
+Seat GA-72 is not available.
+Seat  is not available.
+Seat GA-73 is not available.
+Seat GA-74 is not available.
+Seat GA-75 is not available.
+Seat GA-76 is not available.
+Seat  is not available.
+Seat  is not available.
+Seat GA-77 is not available.
+Seat GA-78 is not available.
+Seat GHA-1 is not available.
+Seat GHA-2 is not available.
+Seat  is not available.
+Seat  is not available.
+Seat GHA-3 is not available.
+Seat GHA-4 is not available.
+Seat GHA-5 is not available.
+Seat GHA-6 is not available.
+Seat GHA-7 is not available.
+Seat  is not available.
+Seat GHA-8 is not available.
+Seat GHA-9 is not available.
+Seat GHA-10 is not available.
+Seat GHA-11 is not available.
+Seat GHA-12 is not available.
+Seat  is not available.
+Seat GHA-13 is not available.
+Seat GHA-14 is not available.
+Seat GHA-15 is not available.
+Seat GHA-16 is not available.
+Seat GHA-17 is not available.
+Seat  is not available.
+Seat GHA-18 is not available.
+Seat GHA-19 is not available.
+Seat GHA-20 is not available.
+Seat GHA-21 is not available.
+Seat GHA-22 is not available.
+Seat  is not available.
+Seat GHA-23 is not available.
+Seat GHA-24 is not available.
+Seat GHA-25 is not available.
+Seat GHA-26 is not available.
+Seat GHA-27 is not available.
+Seat  is not available.
+Seat GHA-28 is not available.
+Seat GHA-29 is not available.
+Seat GHA-30 is not available.
+Seat GHA-31 is not available.
+Seat GHA-32 is not available.
+Seat  is not available.
+Seat GHA-33 is not available.
+Seat GHA-34 is not available.
+Seat GHA-35 is not available.
+Seat GHA-36 is not available.
+Seat GHA-37 is not available.
+Seat  is not available.
+Seat GHA-38 is not available.
+Seat GHA-39 is not available.
+Seat  is not available.
+Seat  is not available.
+Seat  is not available.
+Seat  is not available.
+Seat  is not available.
+Seat  is not available.
+Seat GHA-40 is not available.
+Seat GHA-41 is not available.
+Seat GHA-42 is not available.
+Seat  is not available.
+Seat GHA-43 is not available.
+Seat GHA-44 is not available.
+Seat GHA-45 is not available.
+Seat GHA-46 is not available.
+Seat GHA-47 is not available.
+Seat  is not available.
+Seat GHA-48 is not available.
+Seat GHA-49 is not available.
+Seat GHA-50 is not available.
+Seat GHA-51 is not available.
+Seat GHA-52 is not available.
+Seat  is not available.
+Seat GHA-53 is not available.
+Seat GHA-54 is not available.
+Seat GHA-55 is not available.
+Seat GHA-56 is not available.
+Seat GHA-57 is not available.
+Seat  is not available.
+Seat GHA-58 is not available.
+Seat GHA-59 is not available.
+Seat GHA-60 is not available.
+Seat GHA-61 is not available.
+Seat GHA-62 is not available.
+Seat  is not available.
+Seat GHA-63 is not available.
+Seat GHA-64 is not available.
+Seat GHA-65 is not available.
+Seat GHA-66 is not available.
+Seat GHA-67 is not available.
+Seat  is not available.
+Seat GHA-68 is not available.
+Seat GHA-69 is not available.
+Seat GHA-70 is not available.
+Seat GHA-71 is not available.
+Seat GHA-72 is not available.
+Seat  is not available.
+Seat GHA-73 is not available.
+Seat GHA-74 is available and added.
+Seat GHA-75 is available and added.
+Seat GHA-76 is available and added.
+Seat  is not available.
+Seat  is not available.
+Seat GHA-77 is available and added.
+Seat GHA-78 is available and added.
+Seat XTR2-1 is not available.
+Seat XTR2-2 is not available.
+Seat XTR2-3 is not available.
+Seat XTR2-4 is not available.
+Seat XTR2-5 is not available.
+Seat XTR2-6 is not available.
+Seat XTR2-7 is not available.
+Seat XTR2-8 is not available.
+Seat XTR2-9 is not available.
+Seat XTR2-10 is not available.
+Seat XTR2-11 is not available.
+Seat XTR2-12 is not available.
+Seat XTR2-13 is not available.
+Seat XTR2-14 is not available.
+Seat XTR2-15 is not available.
+Seat XTR2-16 is not available.
+Seat XTR2-17 is not available.
+Seat XTR2-18 is not available.
+Seat XTR2-19 is not available.
+Seat XTR2-20 is not available.
+Seat XTR2-21 is not available.
+Seat XTR2-22 is not available.
+Seat XTR2-23 is not available.
+Seat XTR2-24 is not available.
+Seat XTR2-25 is not available.
+Seat XTR2-26 is not available.
+Seat XTR2-27 is not available.
+Seat XTR2-28 is not available.
+Seat XTR2-29 is not available.
+Seat XTR2-30 is not available.
+Seat XTR2-31 is not available.
+Seat XTR2-32 is not available.
+Seat XTR2-33 is not available.
+Seat XTR2-34 is not available.
+Seat XTR2-35 is not available.
+Seat XTR2-36 is not available.
+Seat XTR2-37 is not available.
+Seat XTR2-38 is not available.
+Seat XTR2-39 is not available.
+Seat XTR2-40 is not available.
+Seat XTR2-41 is not available.
+Seat XTR2-42 is not available.
+Seat XTR2-43 is not available.
+Seat XTR2-44 is not available.
+Seat XTR2-45 is not available.
+Seat XTR2-46 is not available.
+Seat XTR2-47 is not available.
+Seat XTR2-48 is not available.
+Seat XTR2-49 is not available.
+Seat XTR2-50 is not available.
+Seat XTR2-51 is not available.
+Seat XTR2-52 is not available.
+Seat XTR2-53 is not available.
+Seat XTR2-54 is not available.
+Seat XTR2-55 is not available.
+Seat XTR2-56 is not available.
+Seat XTR2-57 is not available.
+Seat XTR2-58 is not available.
+Seat XTR2-59 is not available.
+Seat XTR2-60 is not available.
+Seat XTR2-61 is not available.
+Seat XTR2-62 is not available.
+Seat XTR2-63 is not available.
+Seat XTR2-64 is not available.
+Seat XTR2-65 is not available.
+Seat XTR2-66 is not available.
+Seat XTR2-67 is not available.
+Seat XTR2-68 is not available.
+Seat XTR2-69 is not available.
+Seat XTR2-70 is not available.
+Seat XTR2-71 is not available.
+Seat XTR2-72 is not available.
+Seat XTR2-73 is not available.
+Seat XTR2-74 is not available.
+Seat XTR2-75 is not available.
+Seat XTR2-76 is not available.
+Seat XTR2-77 is not available.
+Seat XTR2-78 is not available.
+Seat  is not available.
+Seat  is not available.
+Available seats to book: GA-14
+Available seats: GA-14
+-> done: TrainTicketBookingViaAPIStepDefinitions.WhenIGetAvailableSeatsForTheTrip() (0.1s)
+And I book the selected seats
+Booking Seat Number: GA-14, Ticket ID: 541642860
+Starting to book seats sequentially:
+Booking single seat with details: Trip ID: 8410847, Route ID: 52633545, Seat: GA-14, Ticket ID: 541642860
+Request Payload:
+{
+  "ticket_id": 541642860,
+  "route_id": "52633545"
+}
+Booking successful for seat GA-14: Reserved successfully!
+Seat GA-14 booked successfully.
+-> done: TrainTicketBookingViaAPIStepDefinitions.WhenIBookTheSelectedSeats() (0.1s)
+And I continue to purchase for verification
+Verification Request Payload:
+{
+  "trip_id": "8410847",
+  "trip_route_id": "52633545",
+  "ticket_ids": [
+    "541642860"
+  ]
+}
+OTP Sent. Input OTP...
+Listening on http://localhost:5000/
+Continue purchase successful.
+-> done: TrainTicketBookingViaAPIStepDefinitions.WhenIContinueToPurchaseForVerification() (0.2s)
+And I take input from localhost
+Localhost is up. Waiting for form submission...
+-> done: TrainTicketBookingViaAPIStepDefinitions.WhenITakeInputFromLocalhost() (5.0s)
+And I Verify Collected API and Submit
+Retrying... Attempts left: 4
+Received POST Data: 3476
+Server stopped.
+OTP received successfully within retries.
+OTP received for verification: 3476
+Attempting OTP verification...
+OTP verification successful.
+OTP verification successful.
+-> done: TrainTicketBookingViaAPIStepDefinitions.WhenIVerifyCollectedAPIAndSubmit() (10.1s)
+And I confirm Booking
+OTP received for confirmation: 3476
+Attempting booking confirmation...
+=== Response Details ===
+Status Code: OK
+Response Content: {"data":{"message":"Ticket booking is confirmed!","redirectUrl":"https:\/\/train-pay.shohoz.com\/nagad\/pay\/ZDQ1MK45O6"},"extra":{"hash":"8F3C0171297B0EADAAE3E837AF82AE4B"}}
+Redirecting to: https://train-pay.shohoz.com/nagad/pay/ZDQ1MK45O6
+Booking confirmed successfully.
+-> done: TrainTicketBookingViaAPIStepDefinitions.WhenIConfirmBooking() (0.4s)
+And I should be redirected to the payment page
+Booking confirmed, and the browser should open the payment page.
+-> done: TrainTicketBookingViaAPIStepDefinitions.WhenIShouldBeRedirectedToThePaymentPage() (0.0s)
+Then the booking should be successful
+Booking successful.
+-> done: TrainTicketBookingViaAPIStepDefinitions.ThenTheBookingShouldBeSuccessful() (0.0s)

@@ -1,9 +1,4 @@
 using NUnit.Framework;
-using System.Diagnostics;
-using TechTalk.SpecFlow;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using TrainTicketBookUsingAPI;
 
 [Binding]
@@ -17,6 +12,7 @@ public class TrainTicketBookingViaAPIStepDefinitions
     private List<string> _selectedSeats;
     private List<Seat> _availableSeats; // List to store available seats
     private string _selectedTripPointId; // Added this line
+
     public TrainTicketBookingViaAPIStepDefinitions()
     {
         _trainBookingAPI = new TrainBookingAPI();
@@ -28,7 +24,7 @@ public class TrainTicketBookingViaAPIStepDefinitions
     public void GivenIAuthenticateWithTheAPI()
     {
         var mobileNumber = Credentials.MobileNumber;
-        var password = Credentials.Password;
+        var password = "123akash.321";
         _trainBookingAPI.Authenticate(mobileNumber, password);
         Console.WriteLine("Authentication successful. Token received.");
     }
@@ -36,11 +32,11 @@ public class TrainTicketBookingViaAPIStepDefinitions
     [When("I search for trips from '(.*)' to '(.*)' on '(.*)' with seat class '(.*)' and trip number '(.*)'")]
     public void WhenISearchForTripsFromToOnWithSeatClassAndTripNumber(string fromCity, string toCity, string dateOfJourney, string seatClass, string tripNumber)
     {
-        fromCity = Credentials.fromCity;   
+        fromCity = Credentials.fromCity;
         toCity = Credentials.toCity;
         dateOfJourney = Credentials.dateOfJourney;
         seatClass = Credentials.seatClass;
-        tripNumber= Credentials.trainCode;
+        tripNumber = Credentials.trainCode;
 
         try
         {
@@ -70,8 +66,7 @@ public class TrainTicketBookingViaAPIStepDefinitions
                     }
 
                     Console.WriteLine($"Selected trip: {tripNumber}");
-                    Console.WriteLine($"TripRouteId: {_selectedTripRouteId}, TripId: {_selectedTripId}, TripPointId: { _selectedTripPointId}");
-                    
+                    Console.WriteLine($"TripRouteId: {_selectedTripRouteId}, TripId: {_selectedTripId}, TripPointId: {_selectedTripPointId}");
                 }
                 else
                 {
@@ -91,7 +86,6 @@ public class TrainTicketBookingViaAPIStepDefinitions
             Assert.Fail("Error searching for trips: " + ex.Message);
         }
     }
-
 
     [When("I get available seats for the trip")]
     public void WhenIGetAvailableSeatsForTheTrip()
@@ -133,9 +127,6 @@ public class TrainTicketBookingViaAPIStepDefinitions
             Assert.Fail("Error fetching seat layout: " + ex.Message);
         }
     }
-
-
-
 
     [When("I book the selected seats")]
     public void WhenIBookTheSelectedSeats()
@@ -207,14 +198,14 @@ public class TrainTicketBookingViaAPIStepDefinitions
         }
     }
 
-
     [When(@"I take input from localhost")]
     public void WhenITakeInputFromLocalhost()
     {
         // Optional: Add a delay if you want to ensure the server stays up for a certain period
-        Thread.Sleep(30000); // Wait for 30 seconds, adjust as needed
+        Thread.Sleep(5000); // Wait for 30 seconds, adjust as needed
         Console.WriteLine("Localhost is up. Waiting for form submission...");
     }
+
     [When(@"I Verify Collected API and Submit")]
     public void WhenIVerifyCollectedAPIAndSubmit()
     {
@@ -277,6 +268,7 @@ public class TrainTicketBookingViaAPIStepDefinitions
             Assert.Fail($"OTP verification failed: {ex.Message}");
         }
     }
+
     [When(@"I confirm Booking")]
     public void WhenIConfirmBooking()
     {
@@ -345,8 +337,6 @@ public class TrainTicketBookingViaAPIStepDefinitions
     {
         Console.WriteLine("Booking confirmed, and the browser should open the payment page.");
     }
-
-
 
     [Then("the booking should be successful")]
     public void ThenTheBookingShouldBeSuccessful()

@@ -1,13 +1,11 @@
-﻿using RestSharp;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using RestSharp;
 using System.Diagnostics;
 using System.Net;
 using System.Text;
 using System.Web;
 using TrainTicketBookUsingAPI;
-using OpenQA.Selenium.DevTools.V127.WebAuthn;
-using System.Security.Cryptography.X509Certificates;
 
 public class TrainBookingAPI
 {
@@ -524,47 +522,50 @@ public class TrainBookingAPI
 
             apiRequest.AddJsonBody(body);
 
-            var response = client.Execute(apiRequest);
-            Console.WriteLine("=== Response Details ===");
-            Console.WriteLine($"Status Code: {response.StatusCode}");
-            Console.WriteLine($"Response Content: {response.Content}");
+            int maxRetries = 3;
+            int retryDelay = 2000; // Initial delay in milliseconds
 
-            if (response.StatusCode == HttpStatusCode.OK)
+
+            for (int attempt = 1; attempt <= maxRetries; attempt++)
             {
-                // Parse the response content to extract the redirectUrl
-                var jsonResponse = JObject.Parse(response.Content);
-                var redirectUrl = jsonResponse["data"]?["redirectUrl"]?.ToString();
+                var response = client.Execute(apiRequest);
 
-                if (!string.IsNullOrEmpty(redirectUrl))
+                Console.WriteLine("=== Response Details ===");
+                Console.WriteLine($"Status Code: {response.StatusCode}");
+                Console.WriteLine($"Response Content: {response.Content}");
+
+                if (response.StatusCode == HttpStatusCode.OK)
                 {
-                    // Normalize the URL if necessary (if it's escaped or formatted improperly)
-                    var normalizedUrl = Uri.UnescapeDataString(redirectUrl);
+                    var jsonResponse = JObject.Parse(response.Content);
+                    var redirectUrl = jsonResponse["data"]?["redirectUrl"]?.ToString();
 
-                    // Open the URL in the default web browser
-                    OpenUrlInBrowser(normalizedUrl);
+                    if (!string.IsNullOrEmpty(redirectUrl))
+                    {
+                        var normalizedUrl = Uri.UnescapeDataString(redirectUrl);
+                        OpenUrlInBrowser(normalizedUrl);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Redirect URL not found in response.");
+                    }
+
+                    break; // Exit loop if successful
                 }
-                else
+                else if (response.StatusCode == HttpStatusCode.RequestTimeout || (int)response.StatusCode == 422) // 422: Unprocessable Entity
                 {
-                    Console.WriteLine("Redirect URL not found in response.");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Booking confirmation failed: " + response.Content);
-                throw new Exception("Booking confirmation failed.");
-            }
+                    Console.WriteLine($"Request failed (Attempt {attempt}/{maxRetries}): {response.StatusCode}");
+                    Console.WriteLine("Response content: " + response.Content);
 
-            if (!response.IsSuccessful)
-            {
-                Console.WriteLine($"Booking confirmation request failed with status: {response.StatusCode}");
-                Console.WriteLine("Response content: " + response.Content);
-                Console.WriteLine("Request Payload:");
-                Console.WriteLine(JsonConvert.SerializeObject(body, Formatting.Indented));
-                throw new Exception("Error confirming booking: " + response.Content);
-            }
-            else
-            {
-                Console.WriteLine("Booking confirmed successfully.");
+                    if (attempt < maxRetries)
+                    {
+                        Thread.Sleep(retryDelay); // Wait before retrying
+                        retryDelay *= 2; // Exponential backoff
+                    }
+                    else
+                    {
+                        throw new Exception("Booking confirmation failed after retries.");
+                    }
+                }
             }
         }
         else if (Credentials.ticketNumber == 2)
@@ -587,47 +588,50 @@ public class TrainBookingAPI
 
             apiRequest.AddJsonBody(body);
 
-            var response = client.Execute(apiRequest);
-            Console.WriteLine("=== Response Details ===");
-            Console.WriteLine($"Status Code: {response.StatusCode}");
-            Console.WriteLine($"Response Content: {response.Content}");
+            int maxRetries = 3;
+            int retryDelay = 2000; // Initial delay in milliseconds
 
-            if (response.StatusCode == HttpStatusCode.OK)
+
+            for (int attempt = 1; attempt <= maxRetries; attempt++)
             {
-                // Parse the response content to extract the redirectUrl
-                var jsonResponse = JObject.Parse(response.Content);
-                var redirectUrl = jsonResponse["data"]?["redirectUrl"]?.ToString();
+                var response = client.Execute(apiRequest);
 
-                if (!string.IsNullOrEmpty(redirectUrl))
+                Console.WriteLine("=== Response Details ===");
+                Console.WriteLine($"Status Code: {response.StatusCode}");
+                Console.WriteLine($"Response Content: {response.Content}");
+
+                if (response.StatusCode == HttpStatusCode.OK)
                 {
-                    // Normalize the URL if necessary (if it's escaped or formatted improperly)
-                    var normalizedUrl = Uri.UnescapeDataString(redirectUrl);
+                    var jsonResponse = JObject.Parse(response.Content);
+                    var redirectUrl = jsonResponse["data"]?["redirectUrl"]?.ToString();
 
-                    // Open the URL in the default web browser
-                    OpenUrlInBrowser(normalizedUrl);
+                    if (!string.IsNullOrEmpty(redirectUrl))
+                    {
+                        var normalizedUrl = Uri.UnescapeDataString(redirectUrl);
+                        OpenUrlInBrowser(normalizedUrl);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Redirect URL not found in response.");
+                    }
+
+                    break; // Exit loop if successful
                 }
-                else
+                else if (response.StatusCode == HttpStatusCode.RequestTimeout || (int)response.StatusCode == 422) // 422: Unprocessable Entity
                 {
-                    Console.WriteLine("Redirect URL not found in response.");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Booking confirmation failed: " + response.Content);
-                throw new Exception("Booking confirmation failed.");
-            }
+                    Console.WriteLine($"Request failed (Attempt {attempt}/{maxRetries}): {response.StatusCode}");
+                    Console.WriteLine("Response content: " + response.Content);
 
-            if (!response.IsSuccessful)
-            {
-                Console.WriteLine($"Booking confirmation request failed with status: {response.StatusCode}");
-                Console.WriteLine("Response content: " + response.Content);
-                Console.WriteLine("Request Payload:");
-                Console.WriteLine(JsonConvert.SerializeObject(body, Formatting.Indented));
-                throw new Exception("Error confirming booking: " + response.Content);
-            }
-            else
-            {
-                Console.WriteLine("Booking confirmed successfully.");
+                    if (attempt < maxRetries)
+                    {
+                        Thread.Sleep(retryDelay); // Wait before retrying
+                        retryDelay *= 2; // Exponential backoff
+                    }
+                    else
+                    {
+                        throw new Exception("Booking confirmation failed after retries.");
+                    }
+                }
             }
         }
         else
@@ -650,47 +654,50 @@ public class TrainBookingAPI
 
             apiRequest.AddJsonBody(body);
 
-            var response = client.Execute(apiRequest);
-            Console.WriteLine("=== Response Details ===");
-            Console.WriteLine($"Status Code: {response.StatusCode}");
-            Console.WriteLine($"Response Content: {response.Content}");
+            int maxRetries = 3;
+            int retryDelay = 2000; // Initial delay in milliseconds
 
-            if (response.StatusCode == HttpStatusCode.OK)
+
+            for (int attempt = 1; attempt <= maxRetries; attempt++)
             {
-                // Parse the response content to extract the redirectUrl
-                var jsonResponse = JObject.Parse(response.Content);
-                var redirectUrl = jsonResponse["data"]?["redirectUrl"]?.ToString();
+                var response = client.Execute(apiRequest);
 
-                if (!string.IsNullOrEmpty(redirectUrl))
+                Console.WriteLine("=== Response Details ===");
+                Console.WriteLine($"Status Code: {response.StatusCode}");
+                Console.WriteLine($"Response Content: {response.Content}");
+
+                if (response.StatusCode == HttpStatusCode.OK)
                 {
-                    // Normalize the URL if necessary (if it's escaped or formatted improperly)
-                    var normalizedUrl = Uri.UnescapeDataString(redirectUrl);
+                    var jsonResponse = JObject.Parse(response.Content);
+                    var redirectUrl = jsonResponse["data"]?["redirectUrl"]?.ToString();
 
-                    // Open the URL in the default web browser
-                    OpenUrlInBrowser(normalizedUrl);
+                    if (!string.IsNullOrEmpty(redirectUrl))
+                    {
+                        var normalizedUrl = Uri.UnescapeDataString(redirectUrl);
+                        OpenUrlInBrowser(normalizedUrl);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Redirect URL not found in response.");
+                    }
+
+                    break; // Exit loop if successful
                 }
-                else
+                else if (response.StatusCode == HttpStatusCode.RequestTimeout || (int)response.StatusCode == 422) // 422: Unprocessable Entity
                 {
-                    Console.WriteLine("Redirect URL not found in response.");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Booking confirmation failed: " + response.Content);
-                throw new Exception("Booking confirmation failed.");
-            }
+                    Console.WriteLine($"Request failed (Attempt {attempt}/{maxRetries}): {response.StatusCode}");
+                    Console.WriteLine("Response content: " + response.Content);
 
-            if (!response.IsSuccessful)
-            {
-                Console.WriteLine($"Booking confirmation request failed with status: {response.StatusCode}");
-                Console.WriteLine("Response content: " + response.Content);
-                Console.WriteLine("Request Payload:");
-                Console.WriteLine(JsonConvert.SerializeObject(body, Formatting.Indented));
-                throw new Exception("Error confirming booking: " + response.Content);
-            }
-            else
-            {
-                Console.WriteLine("Booking confirmed successfully.");
+                    if (attempt < maxRetries)
+                    {
+                        Thread.Sleep(retryDelay); // Wait before retrying
+                        retryDelay *= 2; // Exponential backoff
+                    }
+                    else
+                    {
+                        throw new Exception("Booking confirmation failed after retries.");
+                    }
+                }
             }
         }
     }

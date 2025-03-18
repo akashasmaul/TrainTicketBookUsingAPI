@@ -5982,11 +5982,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Akash\\TicketBookingSingleSeat\\TrainTicketBookUsingAPI\\TrainTicketBookUsingAPI.csproj",
+      "projectUniqueName": "D:\\Akash\\TrainTicketBookUsingAPI\\TrainTicketBookUsingAPI.csproj",
       "projectName": "TrainTicketBookUsingAPI",
-      "projectPath": "D:\\Akash\\TicketBookingSingleSeat\\TrainTicketBookUsingAPI\\TrainTicketBookUsingAPI.csproj",
+      "projectPath": "D:\\Akash\\TrainTicketBookUsingAPI\\TrainTicketBookUsingAPI.csproj",
       "packagesPath": "C:\\Users\\OPL\\.nuget\\packages\\",
-      "outputPath": "D:\\Akash\\TicketBookingSingleSeat\\TrainTicketBookUsingAPI\\obj\\",
+      "outputPath": "D:\\Akash\\TrainTicketBookUsingAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\OPL\\AppData\\Roaming\\NuGet\\NuGet.Config",
