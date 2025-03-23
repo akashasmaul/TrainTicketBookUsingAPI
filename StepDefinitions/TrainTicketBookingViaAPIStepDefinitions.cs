@@ -53,17 +53,9 @@ public class TrainTicketBookingViaAPIStepDefinitions
                     // Store selected trip information
                     _selectedTripRouteId = selectedTrip.SeatClasses[0].TripRouteId.ToString(); // Updated to use TripRouteId
                     _selectedTripId = selectedTrip.SeatClasses[0].TripId.ToString();
-
-                    // Extract and store the trip_point_id for the boarding point
-                    if (selectedTrip.BoardingPoints != null && selectedTrip.BoardingPoints.Count > 0)
-                    {
-                        _selectedTripPointId = selectedTrip.BoardingPoints[0].TripPointId.ToString();
-                        Credentials.boardingPointId = _selectedTripPointId;
-                    }
-                    else
-                    {
-                        Console.WriteLine("No boarding points found for the selected trip.");
-                    }
+                    _selectedTripPointId = selectedTrip.BoardingPoints[0].TripPointId.ToString();
+                    Credentials.boardingPointId = _selectedTripPointId;
+                   
 
                     Console.WriteLine($"Selected trip: {tripNumber}");
                     Console.WriteLine($"TripRouteId: {_selectedTripRouteId}, TripId: {_selectedTripId}, TripPointId: {_selectedTripPointId}");
@@ -71,6 +63,7 @@ public class TrainTicketBookingViaAPIStepDefinitions
                 else
                 {
                     Console.WriteLine($"No trip found with trip number: {tripNumber}");
+                    Console.WriteLine("No boarding points found for the selected trip.");
                     Assert.Fail($"No trip found with trip number: {tripNumber}");
                 }
             }
@@ -98,12 +91,14 @@ public class TrainTicketBookingViaAPIStepDefinitions
                 Assert.Fail("No valid trip selected.");
             }
 
-            Console.WriteLine($"Selected TripId: {_selectedTripId}, Selected TripRouteId: {_selectedTripRouteId}, Selected BoardingPointId: {Credentials.boardingPointId}");
+            Console.WriteLine($"Selected TripId: {_selectedTripId}, TripRouteId: {_selectedTripRouteId}, " +
+                $"\nStored BoardingPointId: {Credentials.boardingPointId}");
 
             _availableSeats = _trainBookingAPI.GetAvailableSeats(_selectedTripId, _selectedTripRouteId);
             var availableSeatNumbers = _availableSeats
                 .Where(seat => seat.SeatAvailability == 1)
                 .Select(seat => seat.SeatNumber.Trim()) // Ensure no leading/trailing spaces
+                .Reverse() // Reverse the order of available seats
                 .Take(Credentials.ticketNumber)
                 .ToList();
 

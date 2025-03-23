@@ -502,7 +502,7 @@ public class TrainBookingAPI
         var apiRequest = new RestRequest("/bookings/confirm", Method.Patch);
         apiRequest.AddHeader("Authorization", "Bearer " + token);
 
-        if (Credentials.ticketNumber == 1)
+        if (Credentials.ticketNumber == 1 || Credentials.ticketNumber == 0)
         {
             var body = new
             {
@@ -636,69 +636,8 @@ public class TrainBookingAPI
         }
         else
         {
-            var body = new
-            {
-                trip_id = tripId,
-                trip_route_id = tripRouteId,
-                ticket_ids = ticketIds,
-                boarding_point_id = Credentials.boardingPointId,
-                contactperson = 0,
-                passengerType = new[] { "Adult" },
-                pemail = Credentials.email,
-                pmobile = Credentials.MobileNumber,
-                pname = new[] { Credentials.name },
-                gender = new[] { "male" },
-                selected_mobile_transaction = "3",
-                otp = otp
-            };
-
-            apiRequest.AddJsonBody(body);
-
-            int maxRetries = 3;
-            int retryDelay = 2000; // Initial delay in milliseconds
-
-
-            for (int attempt = 1; attempt <= maxRetries; attempt++)
-            {
-                var response = client.Execute(apiRequest);
-
-                Console.WriteLine("=== Response Details ===");
-                Console.WriteLine($"Status Code: {response.StatusCode}");
-                Console.WriteLine($"Response Content: {response.Content}");
-
-                if (response.StatusCode == HttpStatusCode.OK)
-                {
-                    var jsonResponse = JObject.Parse(response.Content);
-                    var redirectUrl = jsonResponse["data"]?["redirectUrl"]?.ToString();
-
-                    if (!string.IsNullOrEmpty(redirectUrl))
-                    {
-                        var normalizedUrl = Uri.UnescapeDataString(redirectUrl);
-                        OpenUrlInBrowser(normalizedUrl);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Redirect URL not found in response.");
-                    }
-
-                    break; // Exit loop if successful
-                }
-                else if (response.StatusCode == HttpStatusCode.RequestTimeout || (int)response.StatusCode == 422) // 422: Unprocessable Entity
-                {
-                    Console.WriteLine($"Request failed (Attempt {attempt}/{maxRetries}): {response.StatusCode}");
-                    Console.WriteLine("Response content: " + response.Content);
-
-                    if (attempt < maxRetries)
-                    {
-                        Thread.Sleep(retryDelay); // Wait before retrying
-                        retryDelay *= 2; // Exponential backoff
-                    }
-                    else
-                    {
-                        throw new Exception("Booking confirmation failed after retries.");
-                    }
-                }
-            }
+            Console.WriteLine("Ticket Number Limit Error ");
+            throw new Exception("Booking confirmation failed");
         }
     }
 
@@ -780,22 +719,6 @@ public class Seat
 {
     public string SeatNumber { get; set; }
     public int SeatAvailability { get; set; }
-    public string TicketId { get; set; } // Optional: Store the ticket ID if it exists
+    public string TicketId { get; set; } 
 }
 
-//public class ApiResponse
-//{
-//    public Data Data { get; set; }
-//    public Extra Extra { get; set; }
-//}
-
-//public class Data
-//{
-//    public string Message { get; set; }
-//    public string RedirectUrl { get; set; }
-//}
-
-//public class Extra
-//{
-//    public string Hash { get; set; }
-//}
