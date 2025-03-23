@@ -533,6 +533,8 @@ public class TrainBookingAPI
                 Console.WriteLine("=== Response Details ===");
                 Console.WriteLine($"Status Code: {response.StatusCode}");
                 Console.WriteLine($"Response Content: {response.Content}");
+                Console.WriteLine("Request Payload:");
+                Console.WriteLine(JsonConvert.SerializeObject(body, Formatting.Indented));
 
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
@@ -599,6 +601,8 @@ public class TrainBookingAPI
                 Console.WriteLine("=== Response Details ===");
                 Console.WriteLine($"Status Code: {response.StatusCode}");
                 Console.WriteLine($"Response Content: {response.Content}");
+                Console.WriteLine("Request Payload:");
+                Console.WriteLine(JsonConvert.SerializeObject(body, Formatting.Indented));
 
                 if (response.StatusCode == HttpStatusCode.OK)
                 {

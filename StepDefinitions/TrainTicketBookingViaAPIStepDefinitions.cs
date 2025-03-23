@@ -91,7 +91,7 @@ public class TrainTicketBookingViaAPIStepDefinitions
                 Assert.Fail("No valid trip selected.");
             }
 
-            Console.WriteLine($"Selected TripId: {_selectedTripId}, TripRouteId: {_selectedTripRouteId}, " +
+            Console.WriteLine($"Selected TripId: {_selectedTripId}, TripRouteId: {_selectedTripRouteId}" +
                 $"\nStored BoardingPointId: {Credentials.boardingPointId}");
 
             _availableSeats = _trainBookingAPI.GetAvailableSeats(_selectedTripId, _selectedTripRouteId);

@@ -1,13 +1,14 @@
 Given I authenticate with the API
 Authentication successful. Token received.
--> done: TrainTicketBookingViaAPIStepDefinitions.GivenIAuthenticateWithTheAPI() (0.9s)
-When I search for trips from 'Dhaka' to 'Natore' on '17-Mar-2025' with seat class 'SNIGDHA' and trip number 'PANCHAGARH EXPRESS (793)'
+-> done: TrainTicketBookingViaAPIStepDefinitions.GivenIAuthenticateWithTheAPI() (0.8s)
+When I search for trips from 'From' to 'To' on 'Date' with seat class 'SNIGDHA' and trip number 'TrainNumber'
 Response Status Code: OK
-Selected trip: PANCHAGARH EXPRESS (793)
-TripRouteId: 52480019, TripId: 8406821, TripPointId: 107693757
--> done: TrainTicketBookingViaAPIStepDefinitions.WhenISearchForTripsFromToOnWithSeatClassAndTripNumber("Dhaka", "Natore", "17-Mar-2025", "SNIGDHA", "PANCHAGARH EXPRES...") (0.2s)
+Selected trip: PANCHAGARH EXPRESS (794)
+TripRouteId: 52633593, TripId: 8410849, TripPointId: 107778997
+-> done: TrainTicketBookingViaAPIStepDefinitions.WhenISearchForTripsFromToOnWithSeatClassAndTripNumber("From", "To", "Date", "SNIGDHA", "TrainNumber") (1.0s)
 And I get available seats for the trip
-Selected TripId: 8406821, Selected TripRouteId: 52480019, Selected BoardingPointId: 107693757
+Selected TripId: 8410849, TripRouteId: 52633593
+Stored BoardingPointId: 107778997
 Response Status Code: OK
 Seat GA-1 is not available.
 Seat GA-2 is not available.
@@ -22,8 +23,8 @@ Seat  is not available.
 Seat GA-8 is not available.
 Seat GA-9 is not available.
 Seat GA-10 is not available.
-Seat GA-11 is not available.
-Seat GA-12 is not available.
+Seat GA-11 is available and added.
+Seat GA-12 is available and added.
 Seat  is not available.
 Seat GA-13 is available and added.
 Seat GA-14 is available and added.
@@ -206,46 +207,115 @@ Seat GHA-71 is not available.
 Seat GHA-72 is not available.
 Seat  is not available.
 Seat GHA-73 is not available.
-Seat GHA-74 is not available.
-Seat GHA-75 is not available.
-Seat GHA-76 is not available.
+Seat GHA-74 is available and added.
+Seat GHA-75 is available and added.
+Seat GHA-76 is available and added.
 Seat  is not available.
 Seat  is not available.
-Seat GHA-77 is not available.
+Seat GHA-77 is available and added.
 Seat GHA-78 is not available.
-Available seats to book: GA-13, GA-14
-Available seats: GA-13, GA-14
--> done: TrainTicketBookingViaAPIStepDefinitions.WhenIGetAvailableSeatsForTheTrip() (0.2s)
+Seat XTR2-1 is not available.
+Seat XTR2-2 is not available.
+Seat XTR2-3 is not available.
+Seat XTR2-4 is not available.
+Seat XTR2-5 is not available.
+Seat XTR2-6 is not available.
+Seat XTR2-7 is not available.
+Seat XTR2-8 is not available.
+Seat XTR2-9 is not available.
+Seat XTR2-10 is not available.
+Seat XTR2-11 is not available.
+Seat XTR2-12 is not available.
+Seat XTR2-13 is not available.
+Seat XTR2-14 is not available.
+Seat XTR2-15 is not available.
+Seat XTR2-16 is not available.
+Seat XTR2-17 is not available.
+Seat XTR2-18 is not available.
+Seat XTR2-19 is not available.
+Seat XTR2-20 is not available.
+Seat XTR2-21 is not available.
+Seat XTR2-22 is not available.
+Seat XTR2-23 is not available.
+Seat XTR2-24 is not available.
+Seat XTR2-25 is not available.
+Seat XTR2-26 is not available.
+Seat XTR2-27 is not available.
+Seat XTR2-28 is not available.
+Seat XTR2-29 is not available.
+Seat XTR2-30 is not available.
+Seat XTR2-31 is not available.
+Seat XTR2-32 is not available.
+Seat XTR2-33 is not available.
+Seat XTR2-34 is not available.
+Seat XTR2-35 is not available.
+Seat XTR2-36 is not available.
+Seat XTR2-37 is not available.
+Seat XTR2-38 is not available.
+Seat XTR2-39 is not available.
+Seat XTR2-40 is not available.
+Seat XTR2-41 is not available.
+Seat XTR2-42 is not available.
+Seat XTR2-43 is not available.
+Seat XTR2-44 is not available.
+Seat XTR2-45 is not available.
+Seat XTR2-46 is not available.
+Seat XTR2-47 is not available.
+Seat XTR2-48 is not available.
+Seat XTR2-49 is not available.
+Seat XTR2-50 is not available.
+Seat XTR2-51 is not available.
+Seat XTR2-52 is not available.
+Seat XTR2-53 is not available.
+Seat XTR2-54 is not available.
+Seat XTR2-55 is not available.
+Seat XTR2-56 is not available.
+Seat XTR2-57 is not available.
+Seat XTR2-58 is not available.
+Seat XTR2-59 is not available.
+Seat XTR2-60 is not available.
+Seat XTR2-61 is not available.
+Seat XTR2-62 is not available.
+Seat XTR2-63 is not available.
+Seat XTR2-64 is not available.
+Seat XTR2-65 is not available.
+Seat XTR2-66 is not available.
+Seat XTR2-67 is not available.
+Seat XTR2-68 is not available.
+Seat XTR2-69 is not available.
+Seat XTR2-70 is not available.
+Seat XTR2-71 is not available.
+Seat XTR2-72 is not available.
+Seat XTR2-73 is not available.
+Seat XTR2-74 is not available.
+Seat XTR2-75 is not available.
+Seat XTR2-76 is not available.
+Seat XTR2-77 is not available.
+Seat XTR2-78 is not available.
+Seat  is not available.
+Seat  is not available.
+Available seats to book: GHA-77
+Available seats: GHA-77
+-> done: TrainTicketBookingViaAPIStepDefinitions.WhenIGetAvailableSeatsForTheTrip() (0.1s)
 And I book the selected seats
-Booking Seat Number: GA-13, Ticket ID: 539996789
+Booking Seat Number: GHA-77, Ticket ID: 541643438
 Starting to book seats sequentially:
-Booking single seat with details: Trip ID: 8406821, Route ID: 52480019, Seat: GA-13, Ticket ID: 539996789
+Booking single seat with details: Trip ID: 8410849, Route ID: 52633593, Seat: GHA-77, Ticket ID: 541643438
 Request Payload:
 {
-  "route_id": "52480019",
-  "ticket_id": 539996789
+  "ticket_id": 541643438,
+  "route_id": "52633593"
 }
-Booking successful for seat GA-13: Reserved successfully!
-Seat GA-13 booked successfully.
-Booking Seat Number: GA-14, Ticket ID: 539996790
-Starting to book seats sequentially:
-Booking single seat with details: Trip ID: 8406821, Route ID: 52480019, Seat: GA-14, Ticket ID: 539996790
-Request Payload:
-{
-  "route_id": "52480019",
-  "ticket_id": 539996790
-}
-Booking successful for seat GA-14: Reserved successfully!
-Seat GA-14 booked successfully.
--> done: TrainTicketBookingViaAPIStepDefinitions.WhenIBookTheSelectedSeats() (0.3s)
+Booking successful for seat GHA-77: Reserved successfully!
+Seat GHA-77 booked successfully.
+-> done: TrainTicketBookingViaAPIStepDefinitions.WhenIBookTheSelectedSeats() (0.1s)
 And I continue to purchase for verification
 Verification Request Payload:
 {
-  "trip_id": "8406821",
-  "trip_route_id": "52480019",
+  "trip_id": "8410849",
+  "trip_route_id": "52633593",
   "ticket_ids": [
-    "539996789",
-    "539996790"
+    "541643438"
   ]
 }
 OTP Sent. Input OTP...
@@ -253,24 +323,48 @@ Listening on http://localhost:5000/
 Continue purchase successful.
 -> done: TrainTicketBookingViaAPIStepDefinitions.WhenIContinueToPurchaseForVerification() (0.2s)
 And I take input from localhost
-Received POST Data: 7403
-Server stopped.
 Localhost is up. Waiting for form submission...
--> done: TrainTicketBookingViaAPIStepDefinitions.WhenITakeInputFromLocalhost() (30.0s)
+-> done: TrainTicketBookingViaAPIStepDefinitions.WhenITakeInputFromLocalhost() (5.0s)
 And I Verify Collected API and Submit
-OTP received for verification: 7403
+Retrying... Attempts left: 4
+Received POST Data: 6550
+Server stopped.
+OTP received successfully within retries.
+OTP received for verification: 6550
 Attempting OTP verification...
 OTP verification successful.
 OTP verification successful.
--> done: TrainTicketBookingViaAPIStepDefinitions.WhenIVerifyCollectedAPIAndSubmit() (0.2s)
+-> done: TrainTicketBookingViaAPIStepDefinitions.WhenIVerifyCollectedAPIAndSubmit() (10.1s)
 And I confirm Booking
-OTP received for confirmation: 7403
+OTP received for confirmation: 6550
 Attempting booking confirmation...
 === Response Details ===
 Status Code: OK
-Response Content: {"data":{"message":"Ticket booking is confirmed!","redirectUrl":"https:\/\/train-pay.shohoz.com\/nagad\/pay\/3SFX4GT6OP"},"extra":{"hash":"4A0232174062F06A08A014F7F3C693E7"}}
-Redirecting to: https://train-pay.shohoz.com/nagad/pay/3SFX4GT6OP
-Booking confirmed successfully.
+Response Content: {"data":{"message":"Ticket booking is confirmed!","redirectUrl":"https:\/\/train-pay.shohoz.com\/nagad\/pay\/KYHIGV312J"},"extra":{"hash":"2FBC1A3D2A287E94809B76A54F4AB3A7"}}
+Request Payload:
+{
+  "trip_id": "8410849",
+  "trip_route_id": "52633593",
+  "ticket_ids": [
+    "541643438"
+  ],
+  "boarding_point_id": "107778997",
+  "contactperson": 0,
+  "passengerType": [
+    "Adult"
+  ],
+  "pemail": "xakshhh@gmail.com",
+  "pmobile": "01521517930",
+  "pname": [
+    "ASMAUL HOSSAIN AKASH"
+  ],
+  "gender": [
+    "male"
+  ],
+  "selected_mobile_transaction": "3",
+  "otp": "6550"
+}
+Redirecting to: https://train-pay.shohoz.com/nagad/pay/KYHIGV312J
 Booking confirmed successfully.
 -> done: TrainTicketBookingViaAPIStepDefinitions.WhenIConfirmBooking() (0.4s)
 And I should be redirected to the payment page
